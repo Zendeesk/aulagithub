@@ -1,3 +1,5 @@
+# aulagithub
+
 # Projeto Calculadora Simples
 
 Este é um projeto Java simples que implementa uma calculadora básica com as operações fundamentais de matemática.
