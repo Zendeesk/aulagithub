@@ -76,4 +76,22 @@ public class CalculadoraTest {
         calculadora.limparHistorico();
         assertTrue(calculadora.getHistorico().isEmpty());
     }
+
+    @Test
+    void testEstatisticas() {
+        calculadora.somar(2.0, 3.0);  // 5.0
+        calculadora.subtrair(10.0, 2.0);  // 8.0
+        calculadora.multiplicar(4.0, 2.0);  // 8.0
+        
+        assertEquals(7.0, calculadora.media());
+        assertEquals(8.0, calculadora.maiorValor());
+        assertEquals(5.0, calculadora.menorValor());
+    }
+
+    @Test
+    void testEstatisticasSemResultados() {
+        assertThrows(ArithmeticException.class, () -> calculadora.media());
+        assertThrows(ArithmeticException.class, () -> calculadora.maiorValor());
+        assertThrows(ArithmeticException.class, () -> calculadora.menorValor());
+    }
 } 
